@@ -1,0 +1,17 @@
+Size of queue is: 4
+Empty
+eneueuing.... 
+Enqued element: 12
+Enqued element: 14
+Enqued element: 16
+Full
+value of element is: 12
+value of element is: 14
+value of element is: 16
+Dequeuing... 12
+Dequeuing... 14
+Dequeuing... 16
+Empty
+Enqued element: 12
+Enqued element: 14
+TASK COMPLETE
