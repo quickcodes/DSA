@@ -1,2 +1,2 @@
 # DSA
-## Quick Data Structure And Algorithm Recap
+## Quick Data Structure And Algorithm
