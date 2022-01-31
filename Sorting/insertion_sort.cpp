@@ -1,161 +1,49 @@
-#include<bits/stdc++.h>
+// Credit of this code goes to greeks for greeks
 
+// C++ program for insertion sort
+#include <bits/stdc++.h>
 using namespace std;
 
-//PRESS TAB TO JUMP
-#define ll long long;
-#define less <;
-#define great >;
-#define eq ==;
-#define deb(x) cout << #x << " " << x << endl;
-#define fr(x) for(int i = 0; i < x; ++i);
-#define frk(x,k) for(int i = k; i < x; ++i);
-
-
-namespace cool
+/* Function to sort an array using insertion sort*/
+void insertionSort(int arr[], int n)
 {
-	// SUM OF NUMBERS.............................
-	template <typename... T>
-	auto sum(T... values)
+	int i, key, j;
+	for (i = 1; i < n; i++)
 	{
-		return ((values) + ...);
-	}
+		key = arr[i];
+		j = i - 1;
 
-	// SUBSTRACT NUMBERS..........................
-	template <typename... T>
-	auto sub(T... values)
-	{
-		return ((values) - ...);
-	}
-
-	// MULTIPLY OF NUMBERS........................
-	template <typename... T>
-	auto mul(T... values)
-	{
-		return ((values) * ...);
-	}
-
-	// DIVIDE OF NUMBERS........................
-	template <typename... T>
-	auto div(T... values)
-	{
-		return ((values) / ...);
-	}
-
-	// MULTIPLY OF NUMBERS........................
-	template <typename... T>
-	auto avg(T... values)
-	{
-		return ((values) + ...) / sizeof...(values);
-	}
-
-	// SWAP TWO NUMBERS...........................
-	template <class t1,class t2>
-	float swap(t1 a, t2 b)
-	{
-		return a ^= b ^= a ^= b;
-	}
-
-	// ALL........................................
-	template <typename... T>
-	bool all(T... values)
-	{
-		return ((values) && ...);
-	}
-
-
-	// ANY........................................
-	template <typename... T>
-	auto any(T... values)
-	{
-		return ((values) || ...);
-	}
-	
-	// IS PRIME...................................
-	bool isPrime(int size)
-	{
-		bool arr[size];
-		for(int i: arr)
+		/* Move elements of arr[0..i-1], that are
+		greater than key, to one position ahead
+		of their current position */
+		while (j >= 0 && arr[j] > key)
 		{
-		    arr[i] = true;
+			arr[j + 1] = arr[j];
+			j = j - 1;
 		}
-		arr[0] = false;
-		arr[1] = false;
-		for(int i=2; i*i<=size; i++)
-		{
-			for(int j = i*2; i<=size; j+=i)
-			{
-				arr[j] = false;
-			}
-		}
-	}
-
-	// IS EVEN...................................
-	bool isEven(int n)
-	{
-	    // n^1 is n+1, then even, else odd
-	    if (n ^ 1 == n + 1)
-	        return true;
-	    else
-	        return false;
-	}
-
-	// GCD/HCF...................................
-	int gcd(int a, int b)
-	{
-		// Both code work same 
-		return b == 0 ? a : gcd(b , a%b);		
-		// if (b == 0) return a; 	
-		// return gcd(b, a%b);   
-	}
-
-	// INPUT OF ANYTHING.........................
-	template<typename... T>
-	void read(T&... args) {
-		((cin >> args), ...);
-	}
-
-	// PRINT ANYTHING............................
-	template <typename... T>
-	void show(T... values)
-	{
-		((cout << values << " "), ...);
-		cout << endl;
+		arr[j + 1] = key;
 	}
 }
 
-// %w custom input
-// showarr foreach loop
-
-
-
-// MAIN FUNCTION
-//___________________________________________
-
-
-int main(int argc, char const *argv[])
+// A utility function to print an array of size n
+void printArray(int arr[], int n)
 {
-	// int a,b;
-	// char str[5] = "four";
-	
-	// cool::read(a,b);
-	// cool::show(a,b,"ka",str);
-	
-	int arr[5];
-	read(arr);
-	show(arr);
+	int i;
+	for (i = 0; i < n; i++)
+		cout << arr[i] << " ";
+	cout << endl;
+}
 
+/* Driver code */
+int main()
+{
+	int arr[] = { 12, 11, 13, 5, 6 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+
+	insertionSort(arr, n);
+	printArray(arr, n);
 
 	return 0;
 }
 
-/*
-			
-.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.
-.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.
-
-sample input -
-1 2
-
-
-*/
+// This is code is contributed by rathbhupendra
