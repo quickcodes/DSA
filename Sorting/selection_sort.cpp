@@ -1,3 +1,5 @@
+// Credit of this code goes to (Greeks for greeks) 
+
 // C++ program for implementation of selection sort
 #include <bits/stdc++.h>
 using namespace std;
